@@ -1,0 +1,728 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 14px;
+  --background: #ffffff;
+  --foreground: #3b82f6;                    /* Blue 500 - 全テキストを青に */
+  --card: #ffffff;
+  --card-foreground: #3b82f6;              /* Blue 500 */
+  --popover: #ffffff;
+  --popover-foreground: #3b82f6;           /* Blue 500 */
+  --primary: #3b82f6;                      /* Blue 500 */
+  --primary-foreground: #ffffff;
+  --secondary: #f1f5f9;                    /* Slate 100 */
+  --secondary-foreground: #1d4ed8;         /* Blue 700 */
+  --muted: #f8fafc;                        /* Slate 50 */
+  --muted-foreground: #60a5fa;             /* Blue 400 */
+  --accent: #dbeafe;                       /* Blue 100 */
+  --accent-foreground: #1e40af;            /* Blue 800 */
+  --destructive: #dc2626;                  /* Red 600 */
+  --destructive-foreground: #ffffff;
+  --border: rgba(59, 130, 246, 0.1);       /* Blue border */
+  --input: transparent;
+  --input-background: #f8fafc;             /* Slate 50 */
+  --switch-background: #e2e8f0;            /* Slate 200 */
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --font-weight-japanese: 700;             /* 日本語用ボールド */
+  --ring: #3b82f6;                         /* Blue 500 */
+  --chart-1: #3b82f6;                      /* Blue 500 */
+  --chart-2: #1d4ed8;                      /* Blue 700 */
+  --chart-3: #1e40af;                      /* Blue 800 */
+  --chart-4: #60a5fa;                      /* Blue 400 */
+  --chart-5: #93c5fd;                      /* Blue 300 */
+  --radius: 0.625rem;
+  --sidebar: #f8fafc;                      /* Slate 50 */
+  --sidebar-foreground: #3b82f6;           /* Blue 500 */
+  --sidebar-primary: #3b82f6;              /* Blue 500 */
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f1f5f9;               /* Slate 100 */
+  --sidebar-accent-foreground: #1d4ed8;    /* Blue 700 */
+  --sidebar-border: rgba(59, 130, 246, 0.1);
+  --sidebar-ring: #3b82f6;                 /* Blue 500 */
+}
+
+.dark {
+  --background: #0f172a;                   /* Slate 900 */
+  --foreground: #60a5fa;                   /* Blue 400 */
+  --card: #1e293b;                         /* Slate 800 */
+  --card-foreground: #60a5fa;              /* Blue 400 */
+  --popover: #1e293b;                      /* Slate 800 */
+  --popover-foreground: #60a5fa;           /* Blue 400 */
+  --primary: #60a5fa;                      /* Blue 400 */
+  --primary-foreground: #0f172a;           /* Slate 900 */
+  --secondary: #334155;                    /* Slate 700 */
+  --secondary-foreground: #93c5fd;         /* Blue 300 */
+  --muted: #334155;                        /* Slate 700 */
+  --muted-foreground: #93c5fd;             /* Blue 300 */
+  --accent: #1e40af;                       /* Blue 800 */
+  --accent-foreground: #dbeafe;            /* Blue 100 */
+  --destructive: #ef4444;                  /* Red 500 */
+  --destructive-foreground: #f8fafc;       /* Slate 50 */
+  --border: rgba(148, 163, 184, 0.2);      /* Slate 400 with opacity */
+  --input: #334155;                        /* Slate 700 */
+  --ring: #60a5fa;                         /* Blue 400 */
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --font-weight-japanese: 700;             /* 日本語用ボールド */
+  --chart-1: #60a5fa;                      /* Blue 400 */
+  --chart-2: #3b82f6;                      /* Blue 500 */
+  --chart-3: #1d4ed8;                      /* Blue 700 */
+  --chart-4: #93c5fd;                      /* Blue 300 */
+  --chart-5: #dbeafe;                      /* Blue 100 */
+  --sidebar: #1e293b;                      /* Slate 800 */
+  --sidebar-foreground: #60a5fa;           /* Blue 400 */
+  --sidebar-primary: #60a5fa;              /* Blue 400 */
+  --sidebar-primary-foreground: #0f172a;   /* Slate 900 */
+  --sidebar-accent: #334155;               /* Slate 700 */
+  --sidebar-accent-foreground: #93c5fd;    /* Blue 300 */
+  --sidebar-border: rgba(148, 163, 184, 0.2);
+  --sidebar-ring: #60a5fa;                 /* Blue 400 */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-white text-foreground;
+    min-height: 100vh;
+    overflow-x: hidden;
+    /* 英語はInter（通常）、日本語はZen Kaku Gothic New（ボールド） */
+    font-family: 'Inter', 'Zen Kaku Gothic New', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    color: #3b82f6; /* Blue 500 - 全テキストを青に統一 */
+    font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/**
+ * 全テキストを青色に統一、日本語はボールド
+ * 英語：Inter (normal weight) / 日本語：Zen Kaku Gothic New (bold)
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-size: var(--text-2xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+      color: #3b82f6; /* Blue 500 */
+      font-family: 'Inter', 'Zen Kaku Gothic New', sans-serif;
+    }
+
+    h2 {
+      font-size: var(--text-xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+      color: #3b82f6; /* Blue 500 */
+      font-family: 'Inter', 'Zen Kaku Gothic New', sans-serif;
+    }
+
+    h3 {
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+      color: #3b82f6; /* Blue 500 */
+      font-family: 'Inter', 'Zen Kaku Gothic New', sans-serif;
+    }
+
+    h4 {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+      color: #3b82f6; /* Blue 500 */
+      font-family: 'Inter', 'Zen Kaku Gothic New', sans-serif;
+    }
+
+    p {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+      color: #1d4ed8; /* Blue 700 - 段落テキスト */
+      font-family: 'Inter', 'Zen Kaku Gothic New', sans-serif;
+    }
+
+    label {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+      color: #3b82f6; /* Blue 500 */
+      font-family: 'Inter', 'Zen Kaku Gothic New', sans-serif;
+    }
+
+    button {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+      color: #3b82f6; /* Blue 500 */
+      font-family: 'Inter', 'Zen Kaku Gothic New', sans-serif;
+    }
+
+    input {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+      color: #3b82f6; /* Blue 500 */
+      font-family: 'Inter', 'Zen Kaku Gothic New', sans-serif;
+    }
+
+    textarea {
+      font-family: 'Inter', 'Zen Kaku Gothic New', sans-serif;
+      color: #3b82f6; /* Blue 500 */
+    }
+
+    /* リンクの統一スタイル */
+    a {
+      color: #1d4ed8; /* Blue 700 */
+      transition: color 0.2s ease;
+      font-family: 'Inter', 'Zen Kaku Gothic New', sans-serif;
+    }
+
+    a:hover {
+      color: #1e40af; /* Blue 800 */
+    }
+
+    /* 強調要素 */
+    strong, b {
+      color: #1e40af; /* Blue 800 */
+      font-weight: 700;
+      font-family: 'Inter', 'Zen Kaku Gothic New', sans-serif;
+    }
+
+    /* 補助テキスト */
+    small {
+      color: #60a5fa; /* Blue 400 */
+      font-family: 'Inter', 'Zen Kaku Gothic New', sans-serif;
+    }
+  }
+}
+
+/* 日本語専用ボールド設定 */
+@layer base {
+  /* 日本語文字範囲に対してボールドを適用 */
+  :where([lang="ja"], [lang="ja-JP"]) {
+    font-weight: var(--font-weight-japanese) !important;
+  }
+
+  /* Zen Kaku Gothic Newフォント使用時は自動的にボールド */
+  .font-zen-kaku,
+  [style*="Zen Kaku Gothic New"] {
+    font-weight: 700 !important;
+  }
+
+  /* 日本語文字を含む可能性のある要素に対する追加設定 */
+  :where(:not([class*=" font-"], :not([class^="font-"]))) {
+    /* ひらがな、カタカナ、漢字が含まれる場合のスタイル調整 */
+    font-variation-settings: 
+      'wght' 400; /* 英語デフォルト */
+  }
+
+  /* 日本語文字が検出された場合の動的ウェイト調整 */
+  *:lang(ja),
+  *[lang="ja"],
+  *[lang="ja-JP"] {
+    font-weight: 700 !important;
+    font-variation-settings: 'wght' 700;
+  }
+}
+
+/* フォント専用ユーティリティクラス */
+@layer utilities {
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400; /* 英語は通常ウェイト */
+  }
+  
+  .font-zen-kaku {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 700 !important; /* 日本語は常にボールド */
+  }
+  
+  .font-mixed {
+    font-family: 'Inter', 'Zen Kaku Gothic New', sans-serif;
+  }
+
+  /* 日本語強制ボールド */
+  .font-japanese-bold {
+    font-weight: 700 !important;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+  }
+
+  /* 英語通常ウェイト */
+  .font-english-normal {
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+html {
+  font-size: var(--font-size);
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+/* Full Page Scroll Snap */
+@layer utilities {
+  .snap-container {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+  }
+
+  .snap-section {
+    height: 100vh;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .snap-section > section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+/* Premium White & Blue Background */
+@layer utilities {
+  .premium-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    
+    background: 
+      radial-gradient(circle at center, transparent 0%, transparent 60%, rgba(59, 130, 246, 0.03) 100%),
+      linear-gradient(135deg, 
+        #ffffff 0%,
+        #f8fafc 25%,
+        #f1f5f9 50%,
+        #e2e8f0 75%,
+        #cbd5e1 100%
+      ),
+      #ffffff;
+    
+    background-size: 100% 100%, 100% 100%, 100% 100%;
+    animation: gentleShift 60s ease-in-out infinite;
+  }
+
+  .premium-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    background: 
+      radial-gradient(ellipse at 20% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, rgba(147, 197, 253, 0.06) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 100%, rgba(219, 234, 254, 0.05) 0%, transparent 40%);
+    
+    background-size: 70% 60%, 60% 70%, 80% 50%;
+    animation: gentleShift 80s ease-in-out infinite reverse;
+  }
+
+  /* 統一されたガラスモーフィズム */
+  .clean-glass {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 16px;
+    border: 1px solid rgba(59, 130, 246, 0.1);
+    box-shadow: 
+      0 8px 32px 0 rgba(59, 130, 246, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    position: relative;
+    color: #3b82f6; /* Blue 500 - 統一されたテキストカラー */
+    font-family: 'Inter', 'Zen Kaku Gothic New', sans-serif;
+  }
+
+  .clean-glass-nav {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 50px;
+    border: 1px solid rgba(59, 130, 246, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(59, 130, 246, 0.1);
+    color: #3b82f6; /* Blue 500 */
+    font-family: 'Inter', 'Zen Kaku Gothic New', sans-serif;
+  }
+
+  .clean-glass-hover {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .clean-glass-hover:hover {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    transform: translateY(-2px) scale(1.01);
+    box-shadow: 0 12px 40px 0 rgba(59, 130, 246, 0.15);
+  }
+
+  /* 統一されたインタラクティブ要素 */
+  .clean-interactive {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    color: #3b82f6; /* Blue 500 */
+    font-family: 'Inter', 'Zen Kaku Gothic New', sans-serif;
+  }
+
+  .clean-interactive:hover {
+    transform: translateY(-2px) scale(1.02);
+    filter: brightness(1.05);
+    color: #1d4ed8; /* Blue 700 - ホバー時はより濃い青 */
+  }
+
+  .clean-interactive::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(45deg, rgba(59, 130, 246, 0.2), rgba(147, 197, 253, 0.2));
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: xor;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .clean-interactive:hover::after {
+    opacity: 1;
+  }
+
+  /* マウス追跡エフェクト */
+  .blue-mouse-track {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .blue-mouse-track::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle 100px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .blue-mouse-track:hover::before {
+    opacity: 1;
+  }
+}
+
+/* 統一されたテキストユーティリティ - 全て青色系に */
+@layer utilities {
+  /* メインテキストカラー */
+  .text-main {
+    color: #3b82f6; /* Blue 500 */
+    font-family: 'Inter', 'Zen Kaku Gothic New', sans-serif;
+  }
+
+  /* セカンダリテキストカラー */
+  .text-secondary {
+    color: #1d4ed8; /* Blue 700 */
+    font-family: 'Inter', 'Zen Kaku Gothic New', sans-serif;
+  }
+
+  /* ミュートテキストカラー */
+  .text-muted {
+    color: #60a5fa; /* Blue 400 */
+    font-family: 'Inter', 'Zen Kaku Gothic New', sans-serif;
+  }
+
+  /* アクセントテキストカラー */
+  .text-accent {
+    color: #1e40af; /* Blue 800 */
+    font-family: 'Inter', 'Zen Kaku Gothic New', sans-serif;
+  }
+
+  /* プライマリテキストカラー */
+  .text-primary {
+    color: #3b82f6; /* Blue 500 */
+    font-family: 'Inter', 'Zen Kaku Gothic New', sans-serif;
+  }
+
+  /* ダークブルーテキスト */
+  .text-primary-dark {
+    color: #1e40af; /* Blue 800 */
+    font-family: 'Inter', 'Zen Kaku Gothic New', sans-serif;
+  }
+
+  /* ライトブルーテキスト */
+  .text-light-blue {
+    color: #60a5fa; /* Blue 400 */
+    font-family: 'Inter', 'Zen Kaku Gothic New', sans-serif;
+  }
+}
+
+/* アニメーション */
+@keyframes gentleShift {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  25% {
+    transform: translate(-10px, 15px) scale(1.01);
+    opacity: 0.98;
+  }
+  50% {
+    transform: translate(15px, -10px) scale(1);
+    opacity: 1;
+  }
+  75% {
+    transform: translate(-5px, -15px) scale(1.005);
+    opacity: 0.99;
+  }
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+.animate-gentle-pulse {
+  animation: pulse 4s ease-in-out infinite;
+}
+
+/* 統一されたグラデーションテキスト */
+.blue-gradient-text {
+  background: linear-gradient(135deg, 
+    #3b82f6 0%,      /* Blue 500 */
+    #1d4ed8 50%,     /* Blue 700 */
+    #1e40af 100%     /* Blue 800 */
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: 'Inter', 'Zen Kaku Gothic New', sans-serif;
+}
+
+/* 互換性のためのアニメーション */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px) rotate(-2deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px) rotate(2deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+@keyframes glassAppear {
+  0% {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+    transform: translateY(30px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    backdrop-filter: blur(15px);
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.8s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.8s ease-out;
+}
+
+.animate-glass-appear {
+  animation: glassAppear 1s ease-out;
+}
+
+/* アニメーション遅延 */
+.animation-delay-200 {
+  animation-delay: 0.2s;
+  animation-fill-mode: both;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
+  animation-fill-mode: both;
+}
+
+.animation-delay-600 {
+  animation-delay: 0.6s;
+  animation-fill-mode: both;
+}
+
+.animation-delay-800 {
+  animation-delay: 0.8s;
+  animation-fill-mode: both;
+}
+
+.animation-delay-1000 {
+  animation-delay: 1s;
+  animation-fill-mode: both;
+}
+
+.animation-delay-1200 {
+  animation-delay: 1.2s;
+  animation-fill-mode: both;
+}
+
+.animation-delay-1400 {
+  animation-delay: 1.4s;
+  animation-fill-mode: both;
+}
+
+/* レガシーサポート（統一されたブルーカラー＆フォントに更新） */
+.gradient-text {
+  background: linear-gradient(135deg, #3b82f6 0%, rgba(59, 130, 246, 0.8) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: 'Inter', 'Zen Kaku Gothic New', sans-serif;
+}
+
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(59, 130, 246, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(59, 130, 246, 0.1);
+  color: #3b82f6; /* Blue 500 - 統一されたテキストカラー */
+  font-family: 'Inter', 'Zen Kaku Gothic New', sans-serif;
+}
+
+.glass-morphism-hover {
+  transition: all 0.3s ease;
+}
+
+.glass-morphism-hover:hover {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* ダイアログレイアウト */
+[data-radix-dialog-content] {
+  max-width: none !important;
+  width: 96vw !important;
+}
+
+/* 文字検出による動的スタイリング（JavaScriptと連携） */
+@layer utilities {
+  /* 日本語文字を含む要素に自動適用されるクラス */
+  .has-japanese {
+    font-weight: 700 !important;
+    font-family: 'Zen Kaku Gothic New', 'Inter', sans-serif !important;
+  }
+
+  /* 英語のみの要素に適用されるクラス */
+  .has-english-only {
+    font-weight: 400;
+    font-family: 'Inter', 'Zen Kaku Gothic New', sans-serif;
+  }
+
+  /* 混在テキスト用 */
+  .has-mixed-text {
+    font-family: 'Inter', 'Zen Kaku Gothic New', sans-serif;
+  }
+}
